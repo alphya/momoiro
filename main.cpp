@@ -4,7 +4,7 @@
 int main()
 {
    using namespace momoiro;
-   // [n*n | n <- [1..]] を表現するコルーチン
+   // [n*n | n <- [1..]] 繧定｡ｨ迴ｾ縺吶ｋ繧ｳ繝ｫ繝ｼ繝√Φ
    coro_t::pull_type inf_list(
       [](coro_t::push_type& sink)
       {
@@ -12,6 +12,5 @@ int main()
          while (true) sink(i * i), i++;
       });
 
-   // 無限の要素数をもつ配列 inf_list の、最初から 10 番目の要素の合計 
    std::cout << (head <<= taked(2) <<= droped(9) <<= inf_list );
 }
